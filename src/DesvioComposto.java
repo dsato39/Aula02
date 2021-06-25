@@ -8,14 +8,21 @@ public class DesvioComposto {
 		 * Sua missão é criar um programa capaz de fazer os cálculos necessários e indicar quanto deve ser investido.*/
 		
 		Scanner leitor = new Scanner(System.in);
-		double doacao, investimento, usoImediato;
+		double doacao, investimento, usoimediato;
 		System.out.println("Por favor, digite o valor da doação recebida!");
 		doacao = leitor.nextDouble();
-	
+		if (doacao > 1000) {
+			investimento = doacao * 0.15;
+		}
+		else {
+			investimento = doacao * 0.05;
+		}
+		usoimediato = doacao - investimento;
+		
 		/*Aqui devemos criar uma solução para realizar os cálculos adequados baseando-nos no valor da doação*/
 		
 		
-		System.out.println("A doação de R$" + doacao + " implica em um investimento de R$" + investimento + ", restando R$" + usoImediato + " para uso imediato");
+		System.out.println("A doação de R$" + doacao + " implica em um investimento de R$" + investimento + ", restando R$" + usoimediato + " para uso imediato");
 		leitor.close();
 
 	}
